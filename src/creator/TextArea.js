@@ -17,17 +17,17 @@ class TextArea extends Component {
 
     return (
       <div className={"col-md"}>
-      <InputGroup className={"mb-3"}>
-        <InputGroup.Prepend>
-          <InputGroup.Text id="basic-addon3">
-            https://www.youtube.com/watch?v=
+        <InputGroup className={"mb-3"}>
+          <InputGroup.Prepend>
+            <InputGroup.Text id="basic-addon3">
+              https://www.youtube.com/watch?v=
         </InputGroup.Text>
-        </InputGroup.Prepend>
-        <FormControl type="text"
-          placeholder="mx3krJHlUzc"
-          aria-describedby="basic-addon1"
-          onChange={this.handleTextChange} />
-      </InputGroup>
+          </InputGroup.Prepend>
+          <FormControl type="text"
+            placeholder="mx3krJHlUzc"
+            aria-describedby="basic-addon1"
+            onChange={this.handleTextChange} />
+        </InputGroup>
       </div>
     );
   }

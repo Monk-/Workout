@@ -1,9 +1,13 @@
 import './App.css';
 import Creator from './creator/Creator'
+import WorkoutView from './workout/WorkoutView'
 
 function App() {
   return (
-    <Creator/>
+    <div className="parent">
+      <Creator />
+      <WorkoutView />
+    </div>
   );
 }
 

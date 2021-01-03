@@ -2,6 +2,7 @@ import React from 'react';
 import TextArea from './TextArea';
 import YouTube from 'react-youtube';
 import RelaxTime from './RelaxTime';
+import { isEmpty } from 'lodash';
 
 class Creator extends React.Component {
   constructor(props) {
@@ -39,14 +40,20 @@ class Creator extends React.Component {
       },
     };
     console.log(this.state.url);
+    let youtube;
+    let empty = isEmpty(this.state.url);
+    if (!empty) {
+      youtube = <div><YouTube videoId={this.state.url} opts={opts} onReady={this._onReady} /></div>;
+    } else {
+      youtube = <div />;
+    }
     return (
-      <div className="container parent">
-        <div className="row">
-          <h3 className="col-md">{this.state.url}</h3>
-          <TextArea handleUrlChange={this.handleUrlChange} />
-          <div className="col-md"><YouTube videoId={this.state.url} opts={opts} onReady={this._onReady} /></div>
-          <div className="col-md"><RelaxTime handleTimeChange={this.handleTimeChange} /></div>
+      <div className="left-half">
+        <h2>Ćwiczenie</h2>
+        <div className={"text-area"}><TextArea handleUrlChange={this.handleUrlChange} />
         </div>
+        {youtube}
+        <div className={"relax-time"}><RelaxTime handleTimeChange={this.handleTimeChange} /></div>
       </div>
     );
   }
