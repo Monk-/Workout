@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { InputGroup, FormControl } from "react-bootstrap"
 
-class RelaxTime extends Component {
+class Reps extends Component {
 
   constructor(props) {
     super(props);
 
-    this.handleTimeChange = this.handleTimeChange.bind(this);
+    this.handleRepsChange = this.handleRepsChange.bind(this);
   }
 
-  handleTimeChange(event) {
-    this.props.handleTimeChange(event.target.value);
+  handleRepsChange(event) {
+    this.props.handleRepsChange(event.target.value);
   }
 
   render() {
@@ -20,13 +20,13 @@ class RelaxTime extends Component {
       <InputGroup className={"mb-3"}>
         <InputGroup.Prepend>
           <InputGroup.Text id="basic-addon3" pattern="[0-9]*">
-            Relax time
+            Repetitions
         </InputGroup.Text>
         </InputGroup.Prepend>
         <FormControl  minLength="1" pattern="[0-9]*"
-          placeholder="60"
+          placeholder="10"
           aria-describedby="basic-addon1"
-          onChange={this.handleTimeChange} />
+          onChange={this.handleRepsChange} />
         
       </InputGroup>
       </div>
@@ -34,4 +34,4 @@ class RelaxTime extends Component {
   }
 }
 
-export default RelaxTime;
+export default Reps;
